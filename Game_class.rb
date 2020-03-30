@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player1, :player2
+  attr_accessor :player1, :player2
 
   def initialize
     @player1 = Player.new("Rinzler")
@@ -12,5 +12,9 @@ class Game
 
   def play
     puts "#{player1.name} and #{player2.name} have joined!"
+
+    # turn1 = Turn.new(player1.name, player2.name)
+    puts Question.new(player1.name, player2.name).math_problem
+    # puts "#{turn1.current_player}: #{Question.new.math_problem}"
   end
 end

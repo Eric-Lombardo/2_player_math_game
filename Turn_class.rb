@@ -19,13 +19,13 @@ class Turn
 
 end
 
-turn1 = Turn.new("Eric", "Tron")
-puts turn1.current_player
-puts turn1.all_players
-puts "=============="
-puts turn1.next_player
-puts turn1.next_player
-puts turn1.next_player
-puts turn1.next_player
-puts turn1.next_player
-puts turn1.next_player #eric should be here
+# turn1 = Turn.new("Eric", "Tron")
+# puts turn1.current_player
+# puts turn1.all_players
+# puts "=============="
+# puts turn1.next_player
+# puts turn1.next_player
+# puts turn1.next_player
+# puts turn1.next_player
+# puts turn1.next_player
+# puts turn1.next_player #eric should be here
