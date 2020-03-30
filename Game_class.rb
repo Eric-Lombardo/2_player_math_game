@@ -1,9 +1,10 @@
 class Game
-  attr_accessor :player1, :player2
+  attr_accessor :player1, :player2, :turn
 
   def initialize
     @player1 = Player.new("Rinzler")
     @player2 = Player.new("Tron")
+    @turn = Turn.new(player1, player2)
   end
 
   def any_player_dead?
@@ -13,8 +14,11 @@ class Game
   def play
     puts "#{player1.name} and #{player2.name} have joined!"
 
-    # turn1 = Turn.new(player1.name, player2.name)
-    puts Question.new(player1.name, player2.name).math_problem
-    # puts "#{turn1.current_player}: #{Question.new.math_problem}"
+    if Question.new(player1.name, player2.name).math_problem == false
+      player1.remove_life_point
+    end
+
+
+    puts "#{player1.name}: #{player1.life_points}/3 vs #{player2.name}: #{player2.life_points}/3"
   end
 end

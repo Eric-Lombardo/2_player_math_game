@@ -11,7 +11,8 @@ class Question
     answer = num1 + num2
     puts "#{turn.current_player}: What is #{num1} + #{num2}?"
     user_answer = gets.chomp.to_i
-    user_answer == answer ? "Yes! That's right!" : "uhh ... not really"
+    puts user_answer == answer ? "#{turn.current_player}: Yes! That's right!" : "#{turn.current_player}: uhh ... not really"
+    return user_answer == answer ? true : false
   end
 end
 
