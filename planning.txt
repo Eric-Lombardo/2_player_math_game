@@ -1,0 +1,19 @@
+class Player
+  # initialize: name
+  # variable: store the Player's life points
+  # method: remove 1 life from Player
+  # method: is Player dead?
+
+class Game
+  # variable: the score of the game
+  # method: is any Player dead?
+  # method: game over
+  # method: game continues
+
+class Turn
+  # variable: who is the current player
+  # method: whose turn is it next?
+
+class Question
+  # method: create a math problem
+  # stdin/stdout from player
