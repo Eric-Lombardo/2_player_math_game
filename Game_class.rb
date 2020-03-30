@@ -12,13 +12,21 @@ class Game
   end
 
   def play
-    puts "#{player1.name} and #{player2.name} have joined!"
+    while self.any_player_dead? == false do
+      puts "#{player1.name} and #{player2.name} have joined!"
 
-    if Question.new(player1.name, player2.name).math_problem == false
-      player1.remove_life_point
+      if Question.new(player1.name, player2.name).math_problem == false
+        player1.remove_life_point
+      end
+
+      puts "#{player1.name}: #{player1.life_points}/3 vs #{player2.name}: #{player2.life_points}/3"
+
+      if self.any_player_dead? == false
+        puts "=== Next Turn ==="
+        turn.next_player
+      else 
+        puts "=== Game Over ==="
+      end
     end
-
-
-    puts "#{player1.name}: #{player1.life_points}/3 vs #{player2.name}: #{player2.life_points}/3"
   end
 end
