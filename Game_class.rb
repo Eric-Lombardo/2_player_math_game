@@ -13,19 +13,23 @@ class Game
 
   def play
     puts "#{player1.name} and #{player2.name} have joined!"
-    
+
     while self.any_player_dead? == false do
       if Question.new(turn).math_problem == false
         turn.current_player.remove_life_point
       end
 
       puts "#{player1.name}: #{player1.life_points}/3 vs #{player2.name}: #{player2.life_points}/3"
+      
+      turn.current_player = turn.next_player
 
       if self.any_player_dead? == false
         puts "=== Next Turn ==="
-        turn.current_player = turn.next_player
       else 
+        puts "#{turn.current_player.name} has won with a score of #{turn.current_player.life_points}/3"
+        puts "#{turn.current_player.name} has derezzed #{turn.next_player.name}"
         puts "=== Game Over ==="
+        puts "Play Again?"
       end
     end
   end
